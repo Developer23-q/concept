@@ -1,0 +1,27 @@
+{
+  "name": "concept-server",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Concept backend — holds the GitHub OAuth client secret and proxies GitHub API calls so the frontend never sees it.",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "cors": "^2.8.5",
+    "express-session": "^1.18.1",
+    "dotenv": "^16.4.5",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/cors": "^2.8.17",
+    "@types/express-session": "^1.18.0",
+    "@types/node": "^22.9.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,74 @@
+.editor-pane, .editor-image-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.editor-tab-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  height: 38px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-inset);
+  flex-shrink: 0;
+}
+
+.editor-tab {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  color: var(--text-secondary);
+}
+.editor-tab.active {
+  color: var(--text-primary);
+  background: var(--bg-panel);
+  border-top: 2px solid var(--accent);
+}
+
+.editor-autosave {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--success);
+}
+
+.editor-scroll-area {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.editor-scroll-area .cm-editor {
+  height: 100%;
+  font-size: 13.5px;
+}
+.editor-scroll-area .cm-scroller {
+  font-family: var(--font-mono);
+}
+
+.editor-empty {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.editor-image-preview {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-inset);
+  overflow: auto;
+  padding: 24px;
+}
+.editor-image-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: var(--radius-sm);
+}

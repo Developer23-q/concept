@@ -1,0 +1,192 @@
+.workspace {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-app);
+}
+
+.workspace-topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-panel);
+  min-height: 48px;
+}
+
+.workspace-name, .workspace-name-input {
+  font-weight: 600;
+  font-size: 14px;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+.workspace-name:hover {
+  background: var(--bg-panel-raised);
+}
+.workspace-name-input {
+  border: 1px solid var(--accent);
+  cursor: text;
+}
+
+.workspace-autosave-indicator {
+  font-size: 12px;
+  color: var(--success);
+}
+
+.workspace-topbar-spacer {
+  flex: 1;
+}
+
+.workspace-view-select-mobile {
+  display: none;
+  background: var(--bg-panel-raised);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  font-size: 13px;
+}
+
+.workspace-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 220px 1fr 380px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.workspace-explorer {
+  border-right: 1px solid var(--border-subtle);
+  overflow-y: auto;
+  background: var(--bg-panel);
+}
+
+.workspace-editor-col {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.workspace-right-col {
+  border-left: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-panel);
+}
+
+.right-view-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.right-view-tabs button {
+  flex: 1;
+  padding: 10px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.right-view-tabs button.active {
+  color: var(--text-primary);
+  border-bottom-color: var(--accent);
+}
+
+.workspace-terminal-wrap {
+  border-top: 1px solid var(--border-subtle);
+  height: 220px;
+  flex-shrink: 0;
+}
+.workspace-terminal-wrap.collapsed {
+  height: auto;
+}
+
+.mobile-tab-bar {
+  display: none;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1024px) {
+  .workspace-body {
+    grid-template-columns: 190px 1fr 320px;
+  }
+}
+
+/* ---------- Mobile: stack into tabbed single-pane view ---------- */
+@media (max-width: 768px) {
+  .workspace-body {
+    display: block;
+    position: relative;
+    height: 100%;
+  }
+
+  .workspace-explorer,
+  .workspace-editor-col,
+  .workspace-right-col {
+    display: none;
+    height: 100%;
+    width: 100%;
+    border: none;
+  }
+  .workspace-explorer.mobile-visible,
+  .workspace-editor-col.mobile-visible,
+  .workspace-right-col.mobile-visible {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .workspace-terminal-wrap {
+    display: none;
+  }
+  .workspace-terminal-wrap.mobile-visible {
+    display: block;
+    height: 100%;
+  }
+
+  .workspace-view-select-mobile {
+    display: none; /* right-view tabs inside the panel handle this even on mobile */
+  }
+
+  .mobile-tab-bar {
+    display: flex;
+    border-top: 1px solid var(--border-subtle);
+    background: var(--bg-panel);
+    flex-shrink: 0;
+  }
+  .mobile-tab-bar button {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 0 10px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 11px;
+  }
+  .mobile-tab-bar button.active {
+    color: var(--accent);
+  }
+  .mobile-tab-icon {
+    font-size: 16px;
+    font-family: var(--font-mono);
+  }
+
+  .workspace-name {
+    font-size: 13px;
+    max-width: 40vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

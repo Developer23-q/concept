@@ -1,0 +1,123 @@
+.file-explorer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.explorer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.explorer-header-actions {
+  display: flex;
+  gap: 2px;
+}
+
+.explorer-new-btn {
+  padding: 2px 8px;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.explorer-footer-hint {
+  padding: 10px 12px;
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  border-top: 1px solid var(--border-subtle);
+}
+.explorer-footer-hint code {
+  font-family: var(--font-mono);
+  background: var(--bg-inset);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.explorer-tree {
+  flex: 1;
+  overflow-y: auto;
+  padding: 6px 0;
+}
+
+.explorer-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 0;
+  position: relative;
+}
+.explorer-file-row:hover {
+  background: var(--bg-panel-raised);
+}
+.explorer-file-row.active {
+  background: rgba(232, 163, 61, 0.12);
+  color: var(--accent);
+}
+.explorer-folder-row {
+  color: var(--text-secondary);
+  font-weight: 600;
+  cursor: default;
+}
+
+.explorer-icon {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  width: 14px;
+  text-align: center;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.explorer-file-row.active .explorer-icon {
+  color: var(--accent);
+}
+
+.explorer-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.explorer-rename-input {
+  flex: 1;
+  background: var(--bg-inset);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 13px;
+  padding: 2px 6px;
+}
+
+.explorer-row-actions {
+  display: none;
+  gap: 4px;
+  margin-left: auto;
+}
+.explorer-file-row:hover .explorer-row-actions {
+  display: flex;
+}
+
+.explorer-action-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 2px 3px;
+  flex-shrink: 0;
+}
+.explorer-action-btn:hover {
+  color: var(--text-primary);
+}

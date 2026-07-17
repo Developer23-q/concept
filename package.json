@@ -1,0 +1,35 @@
+{
+  "name": "concept",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Concept — turn AI-generated HTML/CSS/JS into installable apps, no Android Studio required.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@uiw/react-codemirror": "^4.23.6",
+    "@codemirror/lang-html": "^6.4.9",
+    "@codemirror/lang-css": "^6.3.1",
+    "@codemirror/lang-javascript": "^6.2.2",
+    "@codemirror/lang-json": "^6.0.1",
+    "@codemirror/theme-one-dark": "^6.1.2",
+    "jszip": "^3.10.1",
+    "idb": "^8.0.0",
+    "file-saver": "^2.0.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/file-saver": "^2.0.7",
+    "@vitejs/plugin-react": "^4.3.3",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
+    "vite-plugin-pwa": "^0.20.5"
+  }
+}

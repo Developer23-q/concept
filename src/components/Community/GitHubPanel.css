@@ -1,0 +1,109 @@
+.github-panel {
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.github-notice {
+  padding: 14px 16px;
+}
+.github-notice strong {
+  font-size: 13px;
+}
+.github-notice p {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 6px 0 0;
+}
+.github-notice code {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  background: var(--bg-inset);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.github-error {
+  padding: 14px 16px;
+  border-color: var(--error);
+  background: rgba(226, 106, 92, 0.08);
+}
+.github-error strong {
+  font-size: 13px;
+  color: var(--error);
+}
+.github-error p {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 6px 0 0;
+}
+
+.github-user-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+}
+
+.github-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.github-user-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+.github-user-login {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.github-user-row .btn {
+  margin-left: auto;
+}
+
+.github-push-form {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.github-push-form h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+.github-push-form label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+.github-push-form select,
+.github-push-form input {
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-inset);
+  color: var(--text-primary);
+  font-size: 13px;
+}
+.github-push-form .btn {
+  margin-top: 8px;
+}
+
+.github-status {
+  font-size: 12.5px;
+  color: var(--success);
+}

@@ -32,12 +32,16 @@ app.use(
   })
 );
 
-// Supports local '/health' and Vercel '/api/health'
-app.get(['/health', '/api/health'], (_req: Request, res: Response) => res.json({ ok: true }));
+// Base health check endpoints
+app.get('/health', (_req: Request, res: Response) => res.json({ ok: true }));
+app.get('/api/health', (_req: Request, res: Response) => res.json({ ok: true }));
 
-// Supports local routing and Vercel serverless prefix routing
-app.use(['/auth', '/api/auth'], authRouter);
-app.use(['/apps', '/api/apps'], appsRouter);
+// Express route handling for local and production Vercel paths
+app.use('/auth', authRouter);
+app.use('/api/auth', authRouter);
+
+app.use('/apps', appsRouter);
+app.use('/api/apps', appsRouter);
 
 app.listen(port, () => {
   console.log(`Concept backend listening on http://localhost:${port}`);

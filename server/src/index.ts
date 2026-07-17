@@ -6,6 +6,7 @@ import { authRouter } from './routes/auth.js';
 import { appsRouter } from './routes/apps.js';
 
 const app = express();
+app.set('trust proxy', 1); // CRITICAL FOR VERCEL SECURITY: Tells Express to trust HTTPS headers
 const port = Number(process.env.PORT) || 8787;
 const corsOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173').split(',').map((s) => s.trim());
 

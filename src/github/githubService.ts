@@ -11,8 +11,7 @@ import type { GitHubRepoApp, GitHubUser, Project } from '@/types';
  * a clear network error rather than silently pretending to work — that's
  * intentional, so it's obvious the backend needs to be started.
  */
-
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8787';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
 
 async function apiFetch<T>(path: string, opts: RequestInit = {}): Promise<T> {
   const res = await fetch(`${API_BASE}${path}`, {

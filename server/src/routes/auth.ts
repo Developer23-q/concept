@@ -21,7 +21,7 @@ authRouter.get('/github/login-url', (req: Request, res: Response) => {
   if (!clientId || clientId.startsWith('REPLACE_')) {
     return res.status(500).json({ error: 'GITHUB_CLIENT_ID is not configured on the server yet.' });
   }
-  const redirectUri = `${req.protocol}://${req.get('host')}/api/auth/github/callback`;
+  const redirectUri = 'https://concept26.vercel.app/api/auth/github/callback';
   const url = new URL('https://github.com/login/oauth/authorize');
   url.searchParams.set('client_id', clientId);
   url.searchParams.set('redirect_uri', redirectUri);
